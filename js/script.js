@@ -26,7 +26,9 @@ function displaySeries() {
     const element = document.getElementById("container");
     for(const serie of series) {
         element.innerHTML += `<li data-id="${serie.id}"><h2>${serie.name}</h2><img class="image" src="${serie.image}"> </li>`;
+        getIdOfserieByYear() ;
     }
+
 
     // document.getElementById("container").innerHTML = series.map(serie => `<li><h2>${serie.name}</h2><img class="image" src="${serie.image}"> </li>`).join("")
 }
@@ -190,7 +192,13 @@ function displayNomberOfFavs() {
 }
 
 // 21/ Créer une fonction qui retourne les id des séries par ordre d'année de sortie.
-
+function getIdOfserieByYear() {
+  series.sort(function (a, b) {
+    return a.launchYear - b.launchYear
+});
+console.log(series);
+}
+  
 
 // 22/ Créer une fonction qui affiche les séries dans la page dans l'ordre des ids passés en paramètre.
 
