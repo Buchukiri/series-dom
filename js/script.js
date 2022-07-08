@@ -13,8 +13,8 @@ try {
 
         // Event handlers
         manageClickStyles();
-        manageSeriesClick()
-        manageFavClick()
+        manageSeriesClick();
+        manageFavClick();
     }); 
 } catch (error) {
     console.error("error" + error);
@@ -164,6 +164,7 @@ function displayFavList(){
        html += `<li data-id="${serie.id}">${serie.name}</li>` 
     })
     document.getElementById("favoris").innerHTML = html;
+    displayNomberOfFavs()
 }
 
 // 18/ Créer une fonction permettant de retirer une série de la liste des favoris de par son id.
@@ -184,6 +185,9 @@ function manageFavClick() {
 
 // 20/ Créer une fonction qui affiche le nombre de favoris en titre de la liste des favoris.
 
+function displayNomberOfFavs() {
+    document.getElementById("nombre-favoris").innerHTML = favList.length
+}
 
 // 21/ Créer une fonction qui retourne les id des séries par ordre d'année de sortie.
 
